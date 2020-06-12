@@ -82,41 +82,77 @@ mutator <- function(myseq,nmut) {
 }
 
 #qsn 4
+#qsn 4
 source("https://raw.githubusercontent.com/markziemann/SLE712_files/master/bioinfo_asst3_part2_files/mutblast_functions.R")
-xmutator <- mutator(x,2)
-res <- myblastn_tab(myseq=xmutator, db ="tophit.fa")
-res
-xmutator <- mutator(x,3)
-res <- myblastn_tab(myseq=xmutator, db ="tophit.fa")
-res
-xmutator <- mutator(x,5)
-res <- myblastn_tab(myseq=xmutator, db ="tophit.fa")
-res
-xmutator <- mutator(x,10)
-res <- myblastn_tab(myseq=xmutator, db ="tophit.fa")
-res
-xmutator <- mutator(x,20)
-res <- myblastn_tab(myseq=xmutator, db ="tophit.fa")
-res
-xmutator <- mutator(x,25)
-res <- myblastn_tab(myseq=xmutator, db ="tophit.fa")
-res
-xmutator <- mutator(x,30)
-res <- myblastn_tab(myseq=xmutator, db ="tophit.fa")
-res
-xmutator <- mutator(x,50)
-res <- myblastn_tab(myseq=xmutator, db ="tophit.fa")
-res
-xmutator <- mutator(x,60)
-res <- myblastn_tab(myseq=xmutator, db ="tophit.fa")
-res
-xmutator <- mutator(x,70)
-res <- myblastn_tab(myseq=xmutator, db ="tophit.fa")
-res
+# mutator function  to replace DNA bases with a random base
 
-xmutator <- mutator(x,100)
+mutator <- function(myseq,nmut) {
+  myseq_mod <- myseq
+  mypos<-sample(seq_along(myseq),nmut)
+  myseq_mod[mypos] <- sample(c("a","c","g","t"),length(mypos),replace = TRUE)
+  return(myseq_mod)
+}
 
-res <- myblastn_tab(myseq=xmutator, db ="tophit.fa")
-res
+x_mut <-mutator(myseq = myseq, 100)
+
+x_mut
+
+myblastn_tab(myseq=myseq,db="tophit.fa")
+res <- myblastn_tab(myseq=myseq,db="tophit.fa")
+head(res)
+
+#Pairwise alignment created
+x_mut_1 <- DNAString(c2s(x_mut))
+
+myseq_1 <- DNAString(c2s(myseq))
+
+aln <- pairwiseAlignment(myseq_1,x_mut_1)
+
+
+pid(aln)
+# To know the number of mismatches
+nmismatch(aln)
+
+#Qsn no:- 5
+# Function to randomise the sequence
+myfunc <- function(myseq,nmut) {
+  mutseq <- mutator( myseq= myseq, nmut = nmut) 
+  res <- myblastn_tab(myseq= mutseq, db= "tophit.fa") #for blast
+  if (is.null(res)) {myres= 0} else {myres = 1}
+  return(myres)
+}
+
+myfunc(myseq,525)
+# TO replicate the sequence
+
+replicate(50, myfunc(myseq,100) )
+
+replicate(70, myfunc(myseq,100) )
+
+replicate(80, myfunc(myseq,100) )
+
+replicate(90, myfunc(myseq,100) )
+
+replicate(100, myfunc(myseq,100) )
+
+replicate(20, myfunc(myseq,200) )
+
+replicate(50, myfunc(myseq,200) )
+
+mean(replicate(50, myfunc(myseq,200) ) )
+
+#Qsn no:- 6
+nmut <- 200
+variables <- 2
+output <- matrix(nrow = nmut, ncol = variables)
+
+{
+  propmatch <- mean(replicate(50, routine(myseq, 200)))
+  output[i, ] <- propmatch
+}
+
+
+plot(output,xlab="proportion of sites randomised",ylab="proportion of successful blast")
+               
 
 
