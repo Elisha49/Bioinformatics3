@@ -36,5 +36,5 @@ str(y)
 
 #Qsn no:5(histogram plot of the mean values)
 hist(x$meana)
-hist(x$meana,breaks = 10)
+hist(x$meana,breaks = 20)
 
