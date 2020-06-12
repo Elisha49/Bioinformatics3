@@ -1,13 +1,17 @@
 #Assessment 3 Part 1 and part 2
+
 Unit :-SLE 712 Bioinformatics and Molecular Biology Techniques
 
 #Aim of the Assignment
+
 Class demonstration about how to use git hub via RStudio was done.The main aim of the assignment is to run codes to import the files,perform functions,create histogram and box plot in part 1.Similarly,to test the blast limit ,download files and compress and unzip it and to perform functions for mutations and mismatch determination in part 2.After that commiting the files in Github.
 
 #Motivation
+
 This assignment helps us to learn GitHub amd markdown format.
 
 #Contents
+
 It consists of the following files
 Part A and Part A2 of part 1
 Part 2 library.R
@@ -20,9 +24,11 @@ In part 1,From questions 1 to 5, firstly "gene_expression.tsv" file is downloade
 
 
 #Installation
+
 Rstudio Version 1.2.1335 and R version 3.6.3
 
 #Credits
+
 Elisha Bhattarai
 
 
