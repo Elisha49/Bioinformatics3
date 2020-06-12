@@ -4,11 +4,13 @@ Unit :-SLE 712 Bioinformatics and Molecular Biology Techniques
 
 #Aim of the Assignment
 
-Class demonstration about how to use git hub via RStudio was done.The main aim of the assignment is to run codes to import the files,perform functions,create histogram and box plot in part 1.Similarly,to test the blast limit ,download files and compress and unzip it and to perform functions for mutations and mismatch determination in part 2.After that commiting the files in Github.
+Part 1:- The main aim of the assignment is to develop problem solving skills by learning to use git hub and Rstudio ,run codes to import the files,perform functions,create histogram and box plot in part 1.Also to work together as ateam using Rstudio and GitHub.
+
+Part 2:- The main aim is to download and unzip files,Perform simple manipulations and analyses with sequence data,incorporate point mutations and perform a BLAST search and interpret result by using the functions. After that commiting the files in Github.
 
 #Motivation
 
-This assignment helps us to learn GitHub amd markdown format.
+This assignment helps us to learn GitHub amd markdown format.It helps to know the importance of R and BlAST interms of Biotechnology.
 
 #Contents
 
