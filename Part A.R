@@ -29,9 +29,10 @@ x<-x[order(-x$meana),]
 head(x,10)
 
 #Qsn no:4(To determines the number of genes with mean<10)
-which(x[,3]>10)
+y <- subset(x, meana<10) 
 # Number of genes with mean<10
-dim((x[which(x[,3]<10),]))
+head(y)
+str(y)
 
 #Qsn no:5(histogram plot of the mean values)
 hist(x$meana)
