@@ -15,10 +15,19 @@ This assignment helps us to learn GitHub amd markdown format.It helps to know th
 #Contents
 
 It consists of the following files
-Part A and Part A2 of part 1
-Part 2 library.R
-Readme
-License
+
+-Part A and Part A2 of part 1
+
+-Part 2 library.R
+
+-growtn_data.csv
+
+-gene_expression.tsv
+
+-Readme
+
+-License
+
 
 In part 1,From questions 1 to 5, firstly "gene_expression.tsv" file is downloaded.From the file mean and histogram were plotted.Similary from questions 6 to 10,"growth_data.csv" file is downloaded.From the file the mean of the data provided was calculated and the box plot was plotted.Also,the p-value of the northeast and southwest over a period of 10 years was estimated by t.test and wilcox functions.
 
